@@ -7,7 +7,7 @@ import cookie from 'react-cookie';
 import AlertDismissable from './AlertDismissable';
 import {  loadAlertsForPage,
           markAlertReadForSession,
-          removeAlertsFromStore } from '../store/alerts';
+          removeAlertsFromStore } from '../../store/alerts';
 
 import config from '../../api/config';
 

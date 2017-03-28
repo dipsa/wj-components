@@ -1,8 +1,8 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(['exports', 'react', 'react-addons-css-transition-group', 'redux', 'react-redux', 'react-cookie', './AlertDismissable', '../store/alerts', '../../api/config'], factory);
+    define(['exports', 'react', 'react-addons-css-transition-group', 'redux', 'react-redux', 'react-cookie', './AlertDismissable', '../../store/alerts', '../../api/config'], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require('react'), require('react-addons-css-transition-group'), require('redux'), require('react-redux'), require('react-cookie'), require('./AlertDismissable'), require('../store/alerts'), require('../../api/config'));
+    factory(exports, require('react'), require('react-addons-css-transition-group'), require('redux'), require('react-redux'), require('react-cookie'), require('./AlertDismissable'), require('../../store/alerts'), require('../../api/config'));
   } else {
     var mod = {
       exports: {}
