@@ -73,7 +73,7 @@ export const types = {
   REMOVE_ALERTS_FROM_STORE
 }
 
-// Aerts Reducer
+// Alerts Reducer
 export default () => {
   return (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -101,7 +101,3 @@ export default () => {
     }
   }
 }
-
-// export default function alertsReducer(state = initialState, action) {
-//
-// }

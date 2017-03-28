@@ -1,3 +1,5 @@
+//TODO: Off-load the tenant specific components to tenant related MD module
+
 export default {
   tenant: "lanmaster",
   defaultLanguage : "sv",
