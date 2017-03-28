@@ -1,8 +1,8 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(['exports', './config.json', './delay', 'axios'], factory);
+    define(['exports', './config.js', './delay', 'axios'], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require('./config.json'), require('./delay'), require('axios'));
+    factory(exports, require('./config.js'), require('./delay'), require('axios'));
   } else {
     var mod = {
       exports: {}

@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(['exports', 'react', 'react-addons-css-transition-group', 'redux', 'react-redux', 'react-cookie', './AlertDismissable', '../stroe/alerts', '../../config/commonConfig.json'], factory);
+    define(['exports', 'react', 'react-addons-css-transition-group', 'redux', 'react-redux', 'react-cookie', './AlertDismissable', '../store/alerts', '../../api/config'], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require('react'), require('react-addons-css-transition-group'), require('redux'), require('react-redux'), require('react-cookie'), require('./AlertDismissable'), require('../stroe/alerts'), require('../../config/commonConfig.json'));
+    factory(exports, require('react'), require('react-addons-css-transition-group'), require('redux'), require('react-redux'), require('react-cookie'), require('./AlertDismissable'), require('../store/alerts'), require('../../api/config'));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.reactAddonsCssTransitionGroup, global.redux, global.reactRedux, global.reactCookie, global.AlertDismissable, global.alerts, global.commonConfig);
+    factory(mod.exports, global.react, global.reactAddonsCssTransitionGroup, global.redux, global.reactRedux, global.reactCookie, global.AlertDismissable, global.alerts, global.config);
     global.AlertsContainer = mod.exports;
   }
-})(this, function (exports, _react, _reactAddonsCssTransitionGroup, _redux, _reactRedux, _reactCookie, _AlertDismissable, _alerts, _commonConfig) {
+})(this, function (exports, _react, _reactAddonsCssTransitionGroup, _redux, _reactRedux, _reactCookie, _AlertDismissable, _alerts, _config) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -25,7 +25,7 @@
 
   var _AlertDismissable2 = _interopRequireDefault(_AlertDismissable);
 
-  var _commonConfig2 = _interopRequireDefault(_commonConfig);
+  var _config2 = _interopRequireDefault(_config);
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -100,8 +100,8 @@
 
         loadAlertsForPage({
           page: page,
-          tenant: _commonConfig2.default.tenant,
-          lancode: _commonConfig2.default.defaultLanguage
+          tenant: _config2.default.tenant,
+          lancode: _config2.default.defaultLanguage
         });
       }
     }, {

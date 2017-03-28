@@ -1,4 +1,4 @@
-import config from './config.json';
+import config from './config.js';
 import delay from './delay';
 
 import axios from 'axios';
