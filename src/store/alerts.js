@@ -31,7 +31,7 @@ export function loadAlertsAjaxSuccess(alerts) {
 // Preferred way of loading alerts
 export function loadAlertsForPage(params) {
   return function(dispatch) {
-    return AlertsApi.loadAlertsForPageMock(params).then((alerts) => {
+    return AlertsApi.loadAlertsForPage(params).then((alerts) => {
       dispatch(loadAlertsForPageAjaxSuccess(alerts));
     }).catch(error => {
       throw(error);
