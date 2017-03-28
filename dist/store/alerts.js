@@ -63,7 +63,7 @@
   // Preferred way of loading alerts
   function loadAlertsForPage(params) {
     return function (dispatch) {
-      return _alertsApi2.default.loadAlertsForPage(params).then(function (alerts) {
+      return _alertsApi2.default.loadAlertsForPageMock(params).then(function (alerts) {
         dispatch(loadAlertsForPageAjaxSuccess(alerts));
       }).catch(function (error) {
         throw error;
