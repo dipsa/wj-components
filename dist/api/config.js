@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = config = {
+  exports.default = {
     tenant: "lanmaster",
     defaultLanguage: "sv",
     alert: {

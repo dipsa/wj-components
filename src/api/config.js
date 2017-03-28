@@ -1,4 +1,4 @@
-export default config = {
+export default {
   tenant: "lanmaster",
   defaultLanguage : "sv",
   alert: {
