@@ -1,4 +1,4 @@
-import AlertsContainer from './components/alerts/AlertsContainer';
+import ComponentManager from './components/ComponentManager';
 import reducer, {
   actions,
   types,
@@ -26,4 +26,4 @@ export {
   removeAlertsFromStore
 };
 
-export default AlertsContainer;
+export default ComponentManager;

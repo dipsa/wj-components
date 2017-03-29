@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(['exports', './components/alerts/AlertsContainer', './store/alerts'], factory);
+    define(['exports', './components/ComponentManager', './store/alerts'], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require('./components/alerts/AlertsContainer'), require('./store/alerts'));
+    factory(exports, require('./components/ComponentManager'), require('./store/alerts'));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.AlertsContainer, global.alerts);
+    factory(mod.exports, global.ComponentManager, global.alerts);
     global.index = mod.exports;
   }
-})(this, function (exports, _AlertsContainer, _alerts) {
+})(this, function (exports, _ComponentManager, _alerts) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -18,7 +18,7 @@
   });
   exports.removeAlertsFromStore = exports.markAlertReadForSession = exports.loadAlertsForPageAjaxSuccess = exports.loadAlertsForPage = exports.loadAlertsAjaxSuccess = exports.loadAlerts = exports.reducer = exports.types = exports.actions = undefined;
 
-  var _AlertsContainer2 = _interopRequireDefault(_AlertsContainer);
+  var _ComponentManager2 = _interopRequireDefault(_ComponentManager);
 
   var _alerts2 = _interopRequireDefault(_alerts);
 
@@ -37,5 +37,5 @@
   exports.loadAlertsForPageAjaxSuccess = _alerts.loadAlertsForPageAjaxSuccess;
   exports.markAlertReadForSession = _alerts.markAlertReadForSession;
   exports.removeAlertsFromStore = _alerts.removeAlertsFromStore;
-  exports.default = _AlertsContainer2.default;
+  exports.default = _ComponentManager2.default;
 });
