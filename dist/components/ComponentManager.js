@@ -89,7 +89,7 @@
       value: function render() {
         switch (this.props.name) {
           case 'alert':
-            return _react2.default.createElement(_AlertsContainer2.default, props);
+            return _react2.default.createElement(_AlertsContainer2.default, this.props);
             break;
           default:
             return 'No component found for the provided name: ' + this.props.name;

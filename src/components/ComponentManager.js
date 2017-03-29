@@ -9,7 +9,7 @@ class ComponentManager extends Component {
   render() {
     switch (this.props.name) {
       case 'alert':
-        return (<AlertsContainer {...props} />);
+        return (<AlertsContainer {...this.props} />);
         break;
       default:
         return `No component found for the provided name: ${this.props.name}`;
