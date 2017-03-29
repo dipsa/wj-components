@@ -96,12 +96,13 @@
         var _props = this.props,
             loadAlertsForPage = _props.loadAlertsForPage,
             page = _props.page;
+        var tenants = this.props.motif.tenants;
 
 
         loadAlertsForPage({
           page: page,
-          tenant: _config2.default.tenant,
-          lancode: _config2.default.defaultLanguage
+          tenant: tenants.lanmaster.tenant,
+          lancode: tenants.lanmaster.defaultLanguage
         });
       }
     }, {
@@ -130,6 +131,7 @@
         var _this2 = this;
 
         var alerts = this.props.alerts;
+        var alertAnimations = this.props.motif.alertAnimations;
 
         var dismissableAlerts = void 0;
 
@@ -151,7 +153,7 @@
           _react2.default.createElement(
             _reactAddonsCssTransitionGroup2.default,
             {
-              transitionName: 'alert',
+              transitionName: alertAnimations,
               transitionAppear: false,
               transitionEnterTimeout: 500,
               transitionLeaveTimeout: 300 },

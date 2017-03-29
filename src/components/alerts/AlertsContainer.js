@@ -19,11 +19,12 @@ class AlertsContainer extends Component {
 
   componentWillMount() {
     const { loadAlertsForPage, page } = this.props;
+    const { tenants } = this.props.motif;
 
     loadAlertsForPage({
       page: page,
-      tenant: config.tenant,
-      lancode : config.defaultLanguage
+      tenant: tenants.lanmaster.tenant,
+      lancode : tenants.lanmaster.defaultLanguage
     });
   }
 
@@ -46,6 +47,7 @@ class AlertsContainer extends Component {
 
   render() {
     const { alerts } = this.props;
+    const { alertAnimations } = this.props.motif;
     let dismissableAlerts;
 
     if (alerts && Array.isArray(alerts)) {
@@ -59,7 +61,7 @@ class AlertsContainer extends Component {
     return (
       <div className="alert-container">
         <ReactCSSTransitionGroup
-          transitionName="alert"
+          transitionName={alertAnimations}
           transitionAppear={false}
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>

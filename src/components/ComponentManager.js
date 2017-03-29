@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import AlertsContainer from './alerts/AlertsContainer';
+import * as ComponentTypes from '../constants/components';
 
 class ComponentManager extends Component {
   constructor(props) {
@@ -7,8 +8,10 @@ class ComponentManager extends Component {
   }
 
   render() {
+    console.log(this.props);
+    
     switch (this.props.name) {
-      case 'alert':
+      case ComponentTypes.COMPONENT_ALERT:
         return (<AlertsContainer {...this.props} />);
         break;
       default:

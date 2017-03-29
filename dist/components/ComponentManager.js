@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(['exports', 'react', './alerts/AlertsContainer'], factory);
+    define(['exports', 'react', './alerts/AlertsContainer', '../constants/components'], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require('react'), require('./alerts/AlertsContainer'));
+    factory(exports, require('react'), require('./alerts/AlertsContainer'), require('../constants/components'));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.AlertsContainer);
+    factory(mod.exports, global.react, global.AlertsContainer, global.components);
     global.ComponentManager = mod.exports;
   }
-})(this, function (exports, _react, _AlertsContainer) {
+})(this, function (exports, _react, _AlertsContainer, _components) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -20,6 +20,25 @@
   var _react2 = _interopRequireDefault(_react);
 
   var _AlertsContainer2 = _interopRequireDefault(_AlertsContainer);
+
+  var ComponentTypes = _interopRequireWildcard(_components);
+
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    } else {
+      var newObj = {};
+
+      if (obj != null) {
+        for (var key in obj) {
+          if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+        }
+      }
+
+      newObj.default = obj;
+      return newObj;
+    }
+  }
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -87,8 +106,10 @@
     _createClass(ComponentManager, [{
       key: 'render',
       value: function render() {
+        console.log(this.props);
+
         switch (this.props.name) {
-          case 'alert':
+          case ComponentTypes.COMPONENT_ALERT:
             return _react2.default.createElement(_AlertsContainer2.default, this.props);
             break;
           default:

@@ -1,4 +1,5 @@
 import ComponentManager from './components/ComponentManager';
+import { COMPONENT_ALERT } from './constants/components';
 import reducer, {
   actions,
   types,
@@ -23,7 +24,9 @@ export {
   loadAlertsForPage,
   loadAlertsForPageAjaxSuccess,
   markAlertReadForSession,
-  removeAlertsFromStore
+  removeAlertsFromStore,
+  //component types
+  COMPONENT_ALERT
 };
 
 export default ComponentManager;
