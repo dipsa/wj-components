@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(['exports', 'react', 'react-addons-css-transition-group', 'redux', 'react-redux', 'react-cookie', './AlertDismissable', '../../store/alerts', '../../api/config'], factory);
+    define(['exports', 'react', 'react-addons-css-transition-group', 'redux', 'react-redux', 'react-cookie', 'wj-motif', './AlertDismissable', '../../store/alerts', '../../api/config'], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require('react'), require('react-addons-css-transition-group'), require('redux'), require('react-redux'), require('react-cookie'), require('./AlertDismissable'), require('../../store/alerts'), require('../../api/config'));
+    factory(exports, require('react'), require('react-addons-css-transition-group'), require('redux'), require('react-redux'), require('react-cookie'), require('wj-motif'), require('./AlertDismissable'), require('../../store/alerts'), require('../../api/config'));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.reactAddonsCssTransitionGroup, global.redux, global.reactRedux, global.reactCookie, global.AlertDismissable, global.alerts, global.config);
+    factory(mod.exports, global.react, global.reactAddonsCssTransitionGroup, global.redux, global.reactRedux, global.reactCookie, global.wjMotif, global.AlertDismissable, global.alerts, global.config);
     global.AlertsContainer = mod.exports;
   }
-})(this, function (exports, _react, _reactAddonsCssTransitionGroup, _redux, _reactRedux, _reactCookie, _AlertDismissable, _alerts, _config) {
+})(this, function (exports, _react, _reactAddonsCssTransitionGroup, _redux, _reactRedux, _reactCookie, _wjMotif, _AlertDismissable, _alerts, _config) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -96,12 +96,15 @@
         var _props = this.props,
             loadAlertsForPage = _props.loadAlertsForPage,
             page = _props.page;
+        var _tenants$lanmaster = _wjMotif.tenants.lanmaster,
+            tenant = _tenants$lanmaster.tenant,
+            defaultLanguage = _tenants$lanmaster.defaultLanguage;
 
 
         loadAlertsForPage({
           page: page,
-          tenant: _config2.default.tenant,
-          lancode: _config2.default.defaultLanguage
+          tenant: tenant,
+          lancode: defaultLanguage
         });
       }
     }, {
@@ -151,7 +154,7 @@
           _react2.default.createElement(
             _reactAddonsCssTransitionGroup2.default,
             {
-              transitionName: 'alert',
+              transitionName: _wjMotif.alertAnimations,
               transitionAppear: false,
               transitionEnterTimeout: 500,
               transitionLeaveTimeout: 300 },

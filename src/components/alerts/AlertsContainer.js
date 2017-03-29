@@ -3,6 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import cookie from 'react-cookie';
+import { alertAnimations, tenants } from 'wj-motif';
 
 import AlertDismissable from './AlertDismissable';
 import {  loadAlertsForPage,
@@ -19,11 +20,12 @@ class AlertsContainer extends Component {
 
   componentWillMount() {
     const { loadAlertsForPage, page } = this.props;
+    const { tenant, defaultLanguage } = tenants.lanmaster;
 
     loadAlertsForPage({
       page: page,
-      tenant: config.tenant,
-      lancode : config.defaultLanguage
+      tenant: tenant,
+      lancode : defaultLanguage
     });
   }
 
@@ -59,7 +61,7 @@ class AlertsContainer extends Component {
     return (
       <div className="alert-container">
         <ReactCSSTransitionGroup
-          transitionName="alert"
+          transitionName={alertAnimations}
           transitionAppear={false}
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
