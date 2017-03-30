@@ -77,7 +77,8 @@ AlertsContainer.propTypes = {
   markAlertReadForSession: PropTypes.func.isRequired,
   loadAlertsForPage: PropTypes.func.isRequired,
   removeAlertsFromStore: PropTypes.func.isRequired,
-  page: PropTypes.string.isRequired
+  page: PropTypes.string.isRequired,
+  motif: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {

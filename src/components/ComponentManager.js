@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import AlertsContainer from './alerts/AlertsContainer';
 import * as ComponentTypes from '../constants/components';
+import motif from 'wj-motif';
 
 class ComponentManager extends Component {
   constructor(props) {
@@ -8,11 +9,9 @@ class ComponentManager extends Component {
   }
 
   render() {
-    console.log(this.props);
-    
     switch (this.props.name) {
       case ComponentTypes.COMPONENT_ALERT:
-        return (<AlertsContainer {...this.props} />);
+        return (<AlertsContainer motif={motif} {...this.props} />);
         break;
       default:
         return `No component found for the provided name: ${this.props.name}`;
@@ -21,7 +20,7 @@ class ComponentManager extends Component {
 }
 
 ComponentManager.propTypes = {
-  motif: PropTypes.object.isRequired,
+  motif: PropTypes.object,
   name: PropTypes.string.isRequired
 };
 

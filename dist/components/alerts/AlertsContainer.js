@@ -171,7 +171,8 @@
     markAlertReadForSession: _react.PropTypes.func.isRequired,
     loadAlertsForPage: _react.PropTypes.func.isRequired,
     removeAlertsFromStore: _react.PropTypes.func.isRequired,
-    page: _react.PropTypes.string.isRequired
+    page: _react.PropTypes.string.isRequired,
+    motif: _react.PropTypes.object.isRequired
   };
 
   function mapStateToProps(state) {
